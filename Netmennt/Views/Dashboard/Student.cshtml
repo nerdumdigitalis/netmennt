@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Netmennt.Entities.Component>
+
+<h3>Student Dashboard</h3>
+
+<div class="DashboardContentWrapper" id="StudentDashboardContentWrapper">
+    <div style="width:50%;display:inline-block;float:left;margin-top:0">
+        <h4>Your enrolled courses</h4>
+        @{Html.Partial("~/Views/Components/Index.cshtml", Model.Where(x => x.Type == Netmennt.Enums.ComponentType.School));}
+    </div>
+
+    <div style="width:50%;display:inline-block;margin-top:0">
+        <h4>Your enrolled courses</h4>
+        @{Html.Partial("~/Views/Components/Index.cshtml", Model.Where(x => x.Type == Netmennt.Enums.ComponentType.Programme));}
+    </div>
+
+    
+</div>
+        

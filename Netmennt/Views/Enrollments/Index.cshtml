@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Netmennt.Entities.Enrollment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Enroll in school</h3>
+
+@{Html.RenderAction("Index", "Schools", null);}
+
+
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrollmentReferenceId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrollmentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateEnd)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnrollmentReferenceId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnrollmentType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateEnd)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EnrollmentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EnrollmentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EnrollmentId })
+        </td>
+    </tr>
+}
+
+</table>*@

@@ -1,0 +1,105 @@
+﻿@model Netmennt.Entities.Course
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create new course</h2>
+
+
+<div class="CreateCourse" data-id="@Model.CourseId">
+
+    <div id="CourseInfo" style="width:100%;height:200px;background-color:aqua">
+        <input name="CourseName" id="CourseName" placeholder="Enter course name here!!" style="font-size:x-large"/>
+        <textarea name="CourseDescription" placeholder="Enter the course description here!!" ></textarea>
+    </div>
+    
+    <div class="Topics" style="width:100%;height:100px;background-color:aquamarine">
+        
+        <div id="TopicList">
+
+            @if (Model.Topics != null && Model.Topics.Count > 0)
+            {
+                foreach (var topic in Model.Topics)
+                {
+                    Html.RenderAction("Create", "Topic");
+                }
+            }
+        </div>
+
+           
+        <div class="AddTopic" data-id="@Model.CourseId" style="width:100%;">
+            <h2>Add Topic</h2>
+        </div>
+
+        <div class="Module" style="width:100%;height:100px;background-color:blanchedalmond">
+
+        </div>
+        
+    </div>
+</div>
+
+
+@*@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Course</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.CourseName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CourseName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CourseName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IntroductionVideoUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IntroductionVideoUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IntroductionVideoUrl, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateCreated, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DateCreated, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DateCreated, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

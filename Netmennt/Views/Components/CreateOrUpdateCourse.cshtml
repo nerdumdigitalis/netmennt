@@ -1,0 +1,54 @@
+﻿@model Netmennt.ViewModels.CreateCourseViewModel
+
+<div id="TopBanner">
+
+    <h2 style="float:left">Create new course</h2>
+    <div style="float:right;font-size:large">
+        @Html.ActionLink("<-- Back to dashboard", "Index", "Dashboard", null, null);
+    </div>
+</div>
+
+
+
+<div class="CreateCourse" data-id="@Model.Course.ComponentId">
+
+    <div id="CourseInfo" class="ComponentInfo">
+        <div id="CourseImage" class="ComponentMedia ComponentImage" data-id="@Model.Course.ComponentId">
+            <img src="@Model.Course.ImagePath"  alt="Drag your picture here"/> 
+        </div>
+        <div id="CourseInput" class="ComponentInput">
+            <div class="NameInputWrapper" id="CourseNameInputWrapper">
+                <input type="text" name="CourseName" id="CourseName" class="ComponentName" data-id="@Model.Course.ComponentId" placeholder="Enter course name here" value="@Model.Course.Name" />
+            </div>
+            <div id="DescriptionCourseDescription">
+                <textarea name="CourseDescription" id="CourseDescription" class="ComponentDescription" data-id="@Model.Course.ComponentId" placeholder="Enter the course description here!!">@Model.Course.Description</textarea>
+            </div>
+        </div>
+        <input id="CourseVideoDrop" class="VideoDrop" placeholder="Drop you video link here" value="@Model.Course.VideoUrl" data-id="@Model.Course.ComponentId"/>
+        <div id="@("Video" + Model.Course.ComponentId)" class="ComponentMedia">
+            <iframe width="300" height="200" src=""></iframe>
+        </div>        
+    </div>
+
+    <div id="Topics">
+        <h3>Topics</h3>
+        <div id="TopicList" class="ComponentList accordion">
+
+                @foreach (var topic in Model.Topics)
+                {
+                    Html.RenderPartial("CreateTopic", topic);
+                }
+
+        </div>
+
+        <div id="AddTopic" class="AddComponent" data-componentType="@Netmennt.Enums.ComponentType.Topic" data-enrollmentId="@Model.Course.ComponentId" data-enrollmentType="@Netmennt.Enums.ComponentType.Course" data-targetElement="#TopicList">
+            <h4>Add Topic</h4>
+        </div>
+
+    </div>
+
+
+    
+
+    
+</div>

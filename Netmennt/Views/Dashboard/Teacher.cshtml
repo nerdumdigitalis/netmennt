@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Netmennt.Entities.Component>
+
+<h3>Teacher Dashboard</h3>
+
+<div class="DashboardContentWrapper" id="TeacherDashboardContentWrapper">
+
+    <div style="width:48%;display:inline-block;margin-top:0;">
+        <h4>Your Courses</h4>
+        @if(Model != null)
+        {
+            Html.RenderPartial("~/Views/Components/Course.cshtml", Model.Where(x => x.Type == Netmennt.Enums.ComponentType.Course));
+        }
+        @Html.ActionLink("Create new Course", "CreateOrUpdateCourse", "Components", null, null)
+    </div>
+    <div style="width:48%;display:inline-block;margin-top:0;float:right">
+        <h4>Your Classes</h4>
+        @if (Model != null)
+        {
+            Html.RenderPartial("~/Views/Components/Course.cshtml", Model.Where(x => x.Type == Netmennt.Enums.ComponentType.Class));
+        }
+        @Html.ActionLink("Create new Class", "CreateOrUpdateClass", "Components", null, null)
+    </div>
+</div>
+

@@ -1,0 +1,7 @@
+﻿@model IEnumerable<Netmennt.Entities.Component>
+
+
+@foreach (var topic in Model)
+{
+    Html.RenderPartial("CreateTopic", topic);
+}

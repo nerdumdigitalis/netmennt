@@ -1,0 +1,32 @@
+﻿@model Netmennt.ViewModels.DashboardViewModel
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+
+
+<ul class="tab">
+    <li><a href="#" class="tablinks" onclick="openContent(event, 'StudentDashboard')">Student Dashboard</a></li>
+    <li><a href="#" class="tablinks" onclick="openContent(event, 'TeacherDashboard')">Teacher Dashboard</a></li>
+    <li><a href="#" class="tablinks" onclick="openContent(event, 'SchoolDashboard')">School Dashboard</a></li>
+</ul>
+
+<div id="StudentDashboard" class="tabcontent">
+    @Html.Partial("Student", Model.EnrolledComponents)
+    @*@{Html.RenderAction("Student");}*@
+</div>
+
+<div id="TeacherDashboard" class="tabcontent">
+    @Html.Partial("Teacher", Model.MyComponents.Where(x => x.Type != Netmennt.Enums.ComponentType.School))
+    @*@{Html.RenderAction("Teacher");}*@
+</div>
+
+<div id="SchoolDashboard" class="tabcontent">
+    @Html.Partial("School", Model.MyComponents.Where(x => x.Type == Netmennt.Enums.ComponentType.School))
+@*    @{Html.RenderAction("School");}*@
+
+
+</div>

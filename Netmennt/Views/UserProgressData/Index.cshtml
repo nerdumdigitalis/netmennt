@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Netmennt.Entities.UserProgressData>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataReferenceId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataReferenceType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Progress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Result)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateStarted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateCompleted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataReferenceId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataReferenceType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Progress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Result)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateStarted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateCompleted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserProgressDataId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UserProgressDataId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UserProgressDataId })
+        </td>
+    </tr>
+}
+
+</table>

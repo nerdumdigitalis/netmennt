@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Netmennt.Entities.Component>
+
+<h3>School Dashboard</h3>
+
+<div class="DashboardContentWrapper" id="TeacherDashboardContentWrapper">
+    <div style="width:50%;display:inline-block;float:left;margin-top:0">
+        <h4>Your Schools</h4>
+        @if (Model != null)
+        {
+            Html.Partial("~/Views/Components/Index.cshtml", Model.Where(x => x.Type == Netmennt.Enums.ComponentType.School));
+        }
+        @Html.ActionLink("Create new School", "CreateSchool", "Components", null, null)
+    </div>
+
+    <div style="width:50%;display:inline-block;margin-top:0">
+        <h4>Your Programmes</h4>
+        @if (Model != null)
+        {
+            Html.Partial("~/Views/Components/Index.cshtml", Model.Where(x => x.Type == Netmennt.Enums.ComponentType.Programme));
+        }
+        @Html.ActionLink("Create new Programme", "CreateProgramme", "Components", null, null)
+    </div>
+
+    <div style="width:50%;display:inline-block;float:left;margin-top:0">
+        <h4>Your Teachers</h4>
+        @if (Model != null)
+        {
+            Html.Partial("~/Views/Components/Index.cshtml", Model.Where(x => x.Type == Netmennt.Enums.ComponentType.School));
+        }
+        @Html.ActionLink("Create new School", "CreateSchool", "Components", null, null)
+    </div>
+
+    <div style="width:50%;display:inline-block;margin-top:0">
+        <h4>Your Students</h4>
+        @if (Model != null)
+        {
+            Html.Partial("~/Views/Components/Index.cshtml", Model.Where(x => x.Type == Netmennt.Enums.ComponentType.Programme));
+        }
+        @Html.ActionLink("Create new Programme", "CreateProgramme", "Components", null, null)
+    </div>
+
+</div>
+

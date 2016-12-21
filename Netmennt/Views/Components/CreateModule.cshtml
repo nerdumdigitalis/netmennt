@@ -1,0 +1,16 @@
+﻿@model Netmennt.Entities.Component
+
+<h3>@(string.IsNullOrEmpty(Model.Name) ? "No name given yet" : Model.Name)</h3>
+<div id="ModuleInfo" class="ComponentInfo">
+    <div id="@("ModuleImage" + Model.ComponentId)" class="ComponentMedia ComponentImage" data-id="@Model.ComponentId">
+        <img src="@Model.ImagePath" alt="Drag your picture here"/>
+    </div>
+    <div id="ModuleInput" class="ComponentInput">
+        <input type="text" name="ModuleName" id="@("ModuleName" + Model.ComponentId)" class="ComponentName" data-id="@Model.ComponentId" placeholder="Enter MODULE name here" value="@Model.Name" />
+        <textarea name="ModuleDescription" id="@("ModuleDescription" + Model.ComponentId)" class="ComponentDescription" data-id="@Model.ComponentId" placeholder="Enter the MODULE description here!!">@Model.Description</textarea>
+    </div>
+    <input id="ModuleVideoDrop" class="VideoDrop" placeholder="Drop you video link here" value="@Model.VideoUrl" data-id="@Model.ComponentId" />
+    <div id="@("Video" + Model.ComponentId)" class="ComponentMedia">
+        <iframe width="300" height="200" src=""></iframe>
+    </div>
+</div>

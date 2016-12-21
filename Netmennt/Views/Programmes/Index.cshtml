@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Netmennt.Entities.Programme>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Your Programmes</h3>
+<div class="Programme">
+    @foreach (var item in Model)
+    {
+        <div class="DashboardItem" id="@item.ProgrammeId">
+            <h3>@item.ProgrammeName</h3>
+        </div>
+
+    }
+</div>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProgrammeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SchoolId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProgrammeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SchoolId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ProgrammeId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ProgrammeId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ProgrammeId })
+            </td>
+        </tr>
+    }
+
+    </table>*@

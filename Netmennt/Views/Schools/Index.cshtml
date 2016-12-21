@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Netmennt.Entities.School>
+
+<h3>Your Schools</h3>
+
+<div class="School">
+    @foreach (var item in Model)
+    {
+        <div class="DashboardItem" id="@item.SchoolId">
+            <h3>@item.SchoolName</h3>
+
+        </div>
+        @*<img src="@Url.Content(item.Logo)" alt="Image" width:inherit />*@
+
+    }
+    @Html.ActionLink("Enroll", "Index", "Enrollments", null, null);
+</div>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SchoolName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Logo)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SchoolName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Logo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.SchoolId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.SchoolId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.SchoolId })
+            </td>
+        </tr>
+        </table>*@
+
+
+
+
+

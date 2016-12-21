@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Netmennt.Entities.Component>
+
+@foreach (var component in Model)
+{
+    <div class="Course" style="width:auto;height:100px;background-color:lightblue;align-content:center;border: 1px solid;border-radius:10px;margin-bottom:10px;padding:5px">
+        <h3>@(string.IsNullOrEmpty(component.Name) ? "No Name" : component.Name)</h3>
+        @Html.ActionLink("Edit -->", "CreateOrUpdateCourse", "Components", new { courseId = component.ComponentId}, null)
+
+    </div>
+}

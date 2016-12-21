@@ -1,0 +1,6 @@
+﻿@model IEnumerable<Netmennt.Entities.Component>
+
+@foreach (var module in Model)
+{
+    Html.RenderPartial("CreateModule", module);
+}

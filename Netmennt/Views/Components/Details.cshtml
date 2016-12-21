@@ -1,0 +1,98 @@
+﻿@model Netmennt.Entities.Component
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Flermigan</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Created)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Created)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Updated)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Updated)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.VideoUrl)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.VideoUrl)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ImagePath)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ImagePath)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Order)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Order)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EnrollmentGuid)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EnrollmentGuid)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ComponentId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

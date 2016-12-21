@@ -1,0 +1,34 @@
+﻿@model Netmennt.Entities.Component
+
+<h3>@(string.IsNullOrEmpty(Model.Name) ? "No name given yet" : Model.Name)</h3>
+<div id="TopicInfo" class="ComponentInfo">
+    <div id="@("TopicImage" + Model.ComponentId)" class="ComponentMedia ComponentImage" data-id="@Model.ComponentId">
+        <img src="@Model.ImagePath" alt="Drag your picture here"/>
+    </div>
+    <div id="TopicInput" class="ComponentInput" data-id="@Model.ComponentId">
+        <input type="text" name="TopicName" id="@("TopicName" + Model.ComponentId)" class="ComponentName" data-id="@Model.ComponentId" placeholder="Enter TOPIC name here" value="@Model.Name" />
+        <textarea name="TopicDescription" id="@("TopicDescription" + Model.ComponentId)" class="ComponentDescription" data-id="@Model.ComponentId" placeholder="Enter the TOPIC description here!!">@Model.Description</textarea>
+    </div>
+    <input id="TopicVideoDrop" class="VideoDrop" placeholder="Drop you video link here" value="@Model.VideoUrl" data-id="@Model.ComponentId" />
+    <div id="@("Video" + Model.ComponentId)" class="ComponentMedia">
+        <iframe width="300" height="200" src=""></iframe>
+    </div>
+
+    <div class="Module">
+        <h3>Modules</h3>
+        <div id="@("ModuleList" + Model.ComponentId)" class="ComponentList accordion">
+
+
+            @{Html.RenderAction("CreateOrUpdateModule", new { topicId = Model.ComponentId });}
+
+        </div>
+
+        <div id="AddModule" class="AddComponent" data-componentType="@Netmennt.Enums.ComponentType.Module" data-enrollmentId="@Model.ComponentId" data-enrollmentType="@Netmennt.Enums.ComponentType.Topic" data-targetElement="@("#ModuleList" + Model.ComponentId)">
+            <h4>Add Module</h4>
+        </div>
+    </div>    
+
+</div>
+
+
+

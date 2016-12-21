@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Netmennt.Entities.Course>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Your Courses</h3>
+<div class="Courses">
+    @foreach (var item in Model)
+    {
+        <div class="DashboardItem" id="@item.CourseId">
+            <h3>@item.CourseName</h3>
+        </div>
+
+    }
+</div>
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntroductionVideoUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntroductionVideoUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.CourseId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.CourseId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.CourseId })
+            </td>
+        </tr>
+    }
+
+    </table>*@
